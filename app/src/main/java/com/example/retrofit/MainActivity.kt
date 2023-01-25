@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         viewModel.myResponse.observe(this, Observer { response->
             Log.d("Response",response.userId.toString())
             Log.d("Response",response.id.toString())
-            Log.d("Response",response.tytle)
+            Log.d("Response",response.title)
             Log.d("Response",response.body)
         })
 
