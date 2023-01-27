@@ -8,22 +8,36 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.retrofit.Status.*
+import com.example.retrofit.databinding.ActivityMainBinding
 import com.mindorks.retrofit.coroutines.ui.base.ViewModelFactory
 import kotlinx.android.synthetic.main.activity_main.progressBar
 import kotlinx.android.synthetic.main.activity_main.recyclerView
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var  binding: ActivityMainBinding
+
     private lateinit var viewModel: MainViewModel
     private lateinit var adapter: MainAdapter
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding= ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
         setupViewModel()
         setupUI()
         setupObservers()
+
+        val userName1 = binding.editTextTextPersonName3.text.toString()
+
     }
+
+
+
+
+
 
 
     private fun setupViewModel() {
