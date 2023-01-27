@@ -2,9 +2,10 @@ package com.mindorks.retrofit.coroutines.ui.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.mindorks.retrofit.coroutines.ui.base.data.api.ApiHelper
-import com.mindorks.retrofit.coroutines.ui.base.data.repository.MainRepository
-import com.mindorks.retrofit.coroutines.ui.main.viewmodel.MainViewModel
+import com.example.retrofit.ApiHelper
+import com.example.retrofit.MainRepository
+import com.example.retrofit.MainViewModel
+
 
 class ViewModelFactory(private val apiHelper: ApiHelper) : ViewModelProvider.Factory {
 

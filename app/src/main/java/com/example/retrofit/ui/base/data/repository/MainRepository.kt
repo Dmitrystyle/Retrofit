@@ -1,6 +1,4 @@
-package com.mindorks.retrofit.coroutines.ui.base.data.repository
-
-import com.mindorks.retrofit.coroutines.ui.base.data.api.ApiHelper
+package com.example.retrofit
 
 class MainRepository(private val apiHelper: ApiHelper) {
 

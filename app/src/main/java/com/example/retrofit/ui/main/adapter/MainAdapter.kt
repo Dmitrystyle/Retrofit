@@ -1,15 +1,13 @@
-package com.mindorks.retrofit.coroutines.ui.main.adapter
+package com.example.retrofit
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.retrofit.R
-import com.mindorks.retrofit.coroutines.ui.base.data.model.User
-import com.mindorks.retrofit.coroutines.ui.main.adapter.MainAdapter.DataViewHolder
 import kotlinx.android.synthetic.main.item_layout.view.textViewUserName
 
-class MainAdapter(private val users: ArrayList<User>) : RecyclerView.Adapter<DataViewHolder>() {
+class MainAdapter(private val users: ArrayList<User>) : RecyclerView.Adapter<MainAdapter.DataViewHolder>() {
 
     class DataViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 

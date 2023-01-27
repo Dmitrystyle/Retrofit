@@ -1,4 +1,4 @@
-package com.mindorks.retrofit.coroutines.utils
+package com.example.retrofit
 
 enum class Status {
     SUCCESS,

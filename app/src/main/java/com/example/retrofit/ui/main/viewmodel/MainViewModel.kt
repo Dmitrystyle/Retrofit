@@ -1,9 +1,7 @@
-package com.mindorks.retrofit.coroutines.ui.main.viewmodel
+package com.example.retrofit
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
-import com.mindorks.retrofit.coroutines.ui.base.data.repository.MainRepository
-import com.mindorks.retrofit.coroutines.utils.Resource
 import kotlinx.coroutines.Dispatchers
 
 

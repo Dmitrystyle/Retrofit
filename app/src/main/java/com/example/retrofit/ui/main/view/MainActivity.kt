@@ -1,24 +1,14 @@
-package com.mindorks.retrofit.coroutines.ui.main.view
-
+package com.example.retrofit
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.retrofit.R
-
-import com.mindorks.retrofit.coroutines.ui.base.data.api.ApiHelper
-import com.mindorks.retrofit.coroutines.ui.base.data.api.RetrofitBuilder
-import com.mindorks.retrofit.coroutines.ui.base.data.model.User
+import com.example.retrofit.Status.*
 import com.mindorks.retrofit.coroutines.ui.base.ViewModelFactory
-import com.mindorks.retrofit.coroutines.ui.main.adapter.MainAdapter
-import com.mindorks.retrofit.coroutines.ui.main.viewmodel.MainViewModel
-import com.mindorks.retrofit.coroutines.utils.Status.ERROR
-import com.mindorks.retrofit.coroutines.utils.Status.LOADING
-import com.mindorks.retrofit.coroutines.utils.Status.SUCCESS
 import kotlinx.android.synthetic.main.activity_main.progressBar
 import kotlinx.android.synthetic.main.activity_main.recyclerView
 
@@ -37,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun setupViewModel() {
-        viewModel = ViewModelProviders.of(
+        viewModel = ViewModelProvider(
             this,
             ViewModelFactory(ApiHelper(RetrofitBuilder.apiService))
         ).get(MainViewModel::class.java)
@@ -56,13 +46,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupObservers() {
-        viewModel.getUsers().observe(this, Observer {
-            it?.let { resource ->
-               when (resource.status) {
+        viewModel.getUsers().observe(this, Observer {it?.let { resource ->
+                when (resource.status) {
                     SUCCESS -> {
                         recyclerView.visibility = View.VISIBLE
                         progressBar.visibility = View.GONE
-                        resource.data?.let {users -> retrieveList(users) }
+                        resource.data?.let { users -> retrieveList(users) }
                     }
                     ERROR -> {
                         recyclerView.visibility = View.VISIBLE

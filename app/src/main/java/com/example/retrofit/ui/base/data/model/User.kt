@@ -1,4 +1,4 @@
-package com.mindorks.retrofit.coroutines.ui.base.data.model
+package com.example.retrofit
 
 data class User(
    // val avatar: String,
