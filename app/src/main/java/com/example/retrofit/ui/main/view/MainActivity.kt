@@ -30,8 +30,6 @@ class MainActivity : AppCompatActivity() {
         setupUI()
         setupObservers()
 
-        val userName1 = binding.editTextTextPersonName3.text.toString()
-
     }
 
 
@@ -60,25 +58,33 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupObservers() {
-        viewModel.getUsers().observe(this, Observer {it?.let { resource ->
-                when (resource.status) {
-                    SUCCESS -> {
-                        recyclerView.visibility = View.VISIBLE
-                        progressBar.visibility = View.GONE
-                        resource.data?.let { users -> retrieveList(users) }
-                    }
-                    ERROR -> {
-                        recyclerView.visibility = View.VISIBLE
-                        progressBar.visibility = View.GONE
-                        Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
-                    }
-                    LOADING -> {
-                        progressBar.visibility = View.VISIBLE
-                        recyclerView.visibility = View.GONE
+
+        binding.button3.setOnClickListener {
+            val user = binding.editTextTextPersonName3.text.toString()
+            viewModel.getUsers(user)
+
+
+            viewModel.getUsers(user).observe(this, Observer {
+                it?.let { resource ->
+                    when (resource.status) {
+                        SUCCESS -> {
+                            recyclerView.visibility = View.VISIBLE
+                            progressBar.visibility = View.GONE
+                            resource.data?.let { users -> retrieveList(users) }
+                        }
+                        ERROR -> {
+                            recyclerView.visibility = View.VISIBLE
+                            progressBar.visibility = View.GONE
+                            Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
+                        }
+                        LOADING -> {
+                            progressBar.visibility = View.VISIBLE
+                            recyclerView.visibility = View.GONE
+                        }
                     }
                 }
-            }
-        })
+            })
+        }
     }
 
     private fun retrieveList(users: List<User>) {
