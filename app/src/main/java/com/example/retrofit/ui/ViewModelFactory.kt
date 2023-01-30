@@ -1,4 +1,4 @@
-package com.mindorks.retrofit.coroutines.ui.base
+package com.example.retrofit.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.retrofit.Status.*
 import com.example.retrofit.databinding.ActivityMainBinding
-import com.mindorks.retrofit.coroutines.ui.base.ViewModelFactory
+import com.example.retrofit.ui.ViewModelFactory
 import kotlinx.android.synthetic.main.activity_main.progressBar
 import kotlinx.android.synthetic.main.activity_main.recyclerView
 
@@ -87,7 +87,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun retrieveList(users: List<User>) {
+    private fun retrieveList(users: List<Repo>) {
         adapter.apply {
             addUsers(users)
             notifyDataSetChanged()

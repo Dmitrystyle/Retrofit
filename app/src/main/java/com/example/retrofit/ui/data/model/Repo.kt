@@ -1,6 +1,6 @@
 package com.example.retrofit
 
-data class User(
+data class Repo(
    // val avatar: String,
    // val email: String,
    // val id: String,

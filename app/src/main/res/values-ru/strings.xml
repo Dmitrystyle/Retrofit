@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Retrofit</string>
+    <string name="userName">Введите имя пользователя</string>
+    <string name="FindUserRepositorys">Поиск репозиториев пользователя</string>
+</resources>

@@ -9,7 +9,7 @@ interface ApiService {
     @GET("users/{userName}/repos")
 
     suspend fun getUsers(@Path("userName") user: String
-    ): List<User>
+    ): List<Repo>
 
 
 

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Retrofit</string>
+    <string name="userName">Add User Name</string>
+    <string name="FindUserRepositorys">Find User Repositorys</string>
 </resources>

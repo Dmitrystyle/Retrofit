@@ -4,14 +4,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.retrofit.R
 import kotlinx.android.synthetic.main.item_layout.view.textViewUserName
 
-class MainAdapter(private val users: ArrayList<User>) : RecyclerView.Adapter<MainAdapter.DataViewHolder>() {
+class MainAdapter(private val users: ArrayList<Repo>) : RecyclerView.Adapter<MainAdapter.DataViewHolder>() {
 
     class DataViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun bind(user: User) {
+        fun bind(user: Repo) {
             itemView.apply {
                 textViewUserName.text = user.name
 
@@ -28,7 +27,7 @@ class MainAdapter(private val users: ArrayList<User>) : RecyclerView.Adapter<Mai
         holder.bind(users[position])
     }
 
-    fun addUsers(users: List<User>) {
+    fun addUsers(users: List<Repo>) {
         this.users.apply {
             clear()
             addAll(users)
