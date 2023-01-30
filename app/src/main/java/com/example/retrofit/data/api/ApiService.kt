@@ -8,7 +8,7 @@ interface ApiService {
 
     @GET("users/{userName}/repos")
 
-    suspend fun getUsers(@Path("userName") user: String
+    suspend fun getRepo(@Path("userName") user: String
     ): List<Repo>
 
 

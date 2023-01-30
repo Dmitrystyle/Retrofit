@@ -46,6 +46,11 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.fragment:fragment-ktx:1.5.5'
 
+    //  moxy
+
+    implementation "com.github.moxy-community:moxy:2.1.2"
+    kapt "com.github.moxy-community:moxy-compiler:2.1.2"
+
 
 
     // retrofit

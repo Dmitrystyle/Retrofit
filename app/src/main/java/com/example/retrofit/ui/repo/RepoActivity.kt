@@ -1,4 +1,4 @@
-package com.example.retrofit
+package com.example.retrofit.ui.repo
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -7,17 +7,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.retrofit.ApiHelper
+import com.example.retrofit.Repo
+import com.example.retrofit.RepositoryAdapter
+import com.example.retrofit.RetrofitBuilder
 import com.example.retrofit.Status.*
 import com.example.retrofit.databinding.ActivityMainBinding
-import com.example.retrofit.model.ViewModelFactory
 import kotlinx.android.synthetic.main.activity_main.progressBar
 import kotlinx.android.synthetic.main.activity_main.recyclerView
 
-class MainActivity : AppCompatActivity() {
+class RepoActivity : AppCompatActivity() {
 
     private lateinit var  binding: ActivityMainBinding
 
-    private lateinit var viewModel: MainViewModel
+    private lateinit var viewModel: RepoViewModel
     private lateinit var adapter: RepositoryAdapter
 
 
@@ -36,8 +39,8 @@ class MainActivity : AppCompatActivity() {
     private fun setupViewModel() {
         viewModel = ViewModelProvider(
             this,
-            ViewModelFactory(ApiHelper(RetrofitBuilder.apiService))
-        ).get(MainViewModel::class.java)
+            RepoViewModelFactory(ApiHelper(RetrofitBuilder.apiService))
+        ).get(RepoViewModel::class.java)
     }
 
     private fun setupUI() {
@@ -56,10 +59,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.button3.setOnClickListener {
             val user = binding.editTextTextPersonName3.text.toString()
-            viewModel.getUsers(user)
+            viewModel.getRepo(user)
 
 
-            viewModel.getUsers(user).observe(this, Observer {
+            viewModel.getRepo(user).observe(this, Observer {
                 it?.let { resource ->
                     when (resource.status) {
                         SUCCESS -> {
