@@ -1,4 +1,4 @@
-package com.example.retrofit.ui
+package com.example.retrofit.model
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

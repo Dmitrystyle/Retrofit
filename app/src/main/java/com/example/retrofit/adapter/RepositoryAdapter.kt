@@ -4,9 +4,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.item_layout.view.textViewUserName
+import kotlinx.android.synthetic.main.item_repository.view.*
 
-class MainAdapter(private val users: ArrayList<Repo>) : RecyclerView.Adapter<MainAdapter.DataViewHolder>() {
+class RepositoryAdapter(private val users: ArrayList<Repo>) : RecyclerView.Adapter<RepositoryAdapter.DataViewHolder>() {
 
     class DataViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -19,7 +19,7 @@ class MainAdapter(private val users: ArrayList<Repo>) : RecyclerView.Adapter<Mai
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DataViewHolder =
-        DataViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_layout, parent, false))
+        DataViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_repository, parent, false))
 
     override fun getItemCount(): Int = users.size
 

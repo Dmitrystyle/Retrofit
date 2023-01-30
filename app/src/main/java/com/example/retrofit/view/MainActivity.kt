@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.retrofit.Status.*
 import com.example.retrofit.databinding.ActivityMainBinding
-import com.example.retrofit.ui.ViewModelFactory
+import com.example.retrofit.model.ViewModelFactory
 import kotlinx.android.synthetic.main.activity_main.progressBar
 import kotlinx.android.synthetic.main.activity_main.recyclerView
 
@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var  binding: ActivityMainBinding
 
     private lateinit var viewModel: MainViewModel
-    private lateinit var adapter: MainAdapter
+    private lateinit var adapter: RepositoryAdapter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,11 +33,6 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
-
-
-
-
     private fun setupViewModel() {
         viewModel = ViewModelProvider(
             this,
@@ -47,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupUI() {
         recyclerView.layoutManager = LinearLayoutManager(this)
-        adapter = MainAdapter(arrayListOf())
+        adapter = RepositoryAdapter(arrayListOf())
         recyclerView.addItemDecoration(
             DividerItemDecoration(
                 recyclerView.context,
